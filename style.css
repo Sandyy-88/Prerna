@@ -1,0 +1,38 @@
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#050505;color:#ddd;font-family:"Courier New",monospace}
+body{overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;background:radial-gradient(circle at 70% 35%,rgba(255,70,130,.07),transparent 35%),radial-gradient(circle at 20% 80%,rgba(170,80,255,.05),transparent 30%);pointer-events:none}
+.page{width:min(1200px,calc(100% - 30px));margin:auto;position:relative;z-index:2}
+header{height:55px;border:1px solid #202020;border-top:0;display:flex;align-items:center;gap:8px;padding:0 18px;color:#555;font-size:13px}
+header span:nth-child(1){color:#ff5f57} header span:nth-child(2){color:#febc2e} header span:nth-child(3){color:#28c840}
+header div{position:absolute;left:50%;transform:translateX(-50%);color:#ff7fa4}
+header small{margin-left:auto;color:#777}
+.hero{min-height:calc(100vh - 55px);display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding:70px 35px}
+.pink{color:#ff7fa4}
+h1{font-size:clamp(42px,6vw,76px);font-weight:400;line-height:1.05;margin:20px 0}
+h1 strong{color:#ff7fa4;font-weight:400}
+.line{height:1px;background:#ff7fa4;opacity:.5;margin:28px 0;width:90%}
+.quote{color:#ff8aaa;font-size:20px;line-height:1.6}
+.soft{font-size:18px;line-height:1.7;color:#eee}
+.play{margin-top:25px;background:transparent;color:#ff8aaa;border:1px solid #ff6e99;border-radius:5px;padding:13px 20px;font:inherit;cursor:pointer;transition:.25s}
+.play:hover{background:#ff6e9915;box-shadow:0 0 25px #ff6e9930}
+.music-status{color:#666;font-size:11px}
+.photo-wrap{position:relative;display:flex;justify-content:center}
+.photo-wrap img{width:min(480px,100%);max-height:650px;object-fit:contain;border:1px solid #ff7fa4;border-radius:24px;box-shadow:0 0 45px #ff4f8625}
+.heart{position:absolute;color:#ff7fa4;font-size:60px;text-shadow:0 0 18px #ff4f86;z-index:2;animation:float 2.2s ease-in-out infinite}
+.h1{top:-35px;right:5%}.h2{bottom:-25px;left:5%;animation-delay:.8s}
+.message{border:1px solid #242424;padding:35px 45px;margin:0 35px 70px;max-width:900px;line-height:1.9;font-size:16px;background:#080808cc}
+.message p{max-width:800px}
+.final-line{color:#ff8aaa;font-size:22px;margin-top:30px}
+.signature{text-align:right;color:#777}
+footer{border-top:1px solid #171717;padding:18px 35px 40px;color:#555;font-size:11px;display:flex;justify-content:space-between}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-12px) rotate(8deg)}}
+@media(max-width:800px){
+ header div{display:none}
+ .hero{grid-template-columns:1fr;gap:45px;padding:55px 10px}
+ .intro{order:1}.photo-wrap{order:0}
+ .photo-wrap img{max-height:520px}
+ .message{margin:0 10px 55px;padding:25px}
+ h1{font-size:48px}
+ .quote{font-size:17px}
+}
